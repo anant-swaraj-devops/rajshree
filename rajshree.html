@@ -1,0 +1,665 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raj Shree Jewellers | Rajdhanwar</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --maroon: #4b0808;
+      --dark-maroon: #250303;
+      --gold: #d7a936;
+      --light-gold: #f5df9b;
+      --cream: #fff8e5;
+      --text: #3b160b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: var(--cream);
+      color: var(--text);
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(37, 3, 3, 0.97);
+      border-bottom: 1px solid var(--gold);
+      padding: 15px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: var(--gold);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 34px;
+      font-weight: 700;
+      line-height: 0.8;
+    }
+
+    .logo span {
+      display: block;
+      text-align: center;
+      font-family: "Poppins", sans-serif;
+      font-size: 10px;
+      letter-spacing: 5px;
+      margin-top: 8px;
+    }
+
+    nav a {
+      color: var(--light-gold);
+      text-decoration: none;
+      margin-left: 28px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: white;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(37,3,3,.98) 0%, rgba(75,8,8,.9) 48%, rgba(75,8,8,.35) 100%),
+        url("poster.png") center/cover;
+    }
+
+    .hero-content {
+      max-width: 620px;
+      padding: 70px 7%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .small-title {
+      color: var(--gold);
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    h1 {
+      font-family: "Cormorant Garamond", serif;
+      color: #f6d77c;
+      font-size: clamp(65px, 9vw, 110px);
+      line-height: .8;
+      margin-bottom: 30px;
+    }
+
+    .hero h2 {
+      font-family: "Cormorant Garamond", serif;
+      color: white;
+      font-size: 29px;
+      font-weight: 500;
+      font-style: italic;
+      line-height: 1.3;
+      margin-bottom: 35px;
+    }
+
+    .gold-btn {
+      display: inline-block;
+      background: var(--gold);
+      color: #351000;
+      text-decoration: none;
+      padding: 14px 30px;
+      border-radius: 3px;
+      font-weight: 600;
+      transition: .3s;
+    }
+
+    .gold-btn:hover {
+      background: #f2d477;
+      transform: translateY(-2px);
+    }
+
+    /* TRUST STRIP */
+    .trust {
+      background: #f9e6ad;
+      padding: 35px 6%;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      text-align: center;
+      border-top: 3px solid var(--gold);
+      border-bottom: 3px solid var(--gold);
+    }
+
+    .trust-item {
+      padding: 10px 20px;
+      border-right: 1px solid #c9a447;
+    }
+
+    .trust-item:last-child {
+      border: 0;
+    }
+
+    .trust-icon {
+      font-size: 36px;
+      color: #8a5a00;
+      margin-bottom: 8px;
+    }
+
+    .trust h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 25px;
+      color: #54200d;
+    }
+
+    .trust p {
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 75px 7%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title .eyebrow {
+      color: #a36d0a;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .section-title h2 {
+      font-family: "Cormorant Garamond", serif;
+      color: var(--maroon);
+      font-size: 52px;
+      margin-top: 5px;
+    }
+
+    .section-title p {
+      max-width: 650px;
+      margin: 10px auto;
+      font-size: 14px;
+      color: #765648;
+    }
+
+    /* PROMO */
+    .promo {
+      background:
+        linear-gradient(rgba(68, 4, 4, .94), rgba(68, 4, 4, .94)),
+        radial-gradient(circle, #a56b10, #4b0808);
+      color: white;
+      text-align: center;
+      padding: 70px 20px;
+      border-top: 1px solid var(--gold);
+      border-bottom: 1px solid var(--gold);
+    }
+
+    .promo h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 48px;
+      color: #f4d477;
+    }
+
+    .promo p {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 23px;
+      margin-top: 12px;
+    }
+
+    /* COLLECTION */
+    .collections {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 15px;
+    }
+
+    .collection {
+      background: white;
+      border: 1px solid #d4ae58;
+      overflow: hidden;
+      border-radius: 8px;
+      text-align: center;
+      transition: .3s;
+    }
+
+    .collection:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(75,8,8,.15);
+    }
+
+    .collection-img {
+      height: 170px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #fff9e9, #e8cf91);
+      font-size: 70px;
+    }
+
+    .collection h3 {
+      padding: 15px 5px;
+      color: var(--maroon);
+      font-family: "Cormorant Garamond", serif;
+      font-size: 22px;
+    }
+
+    /* ABOUT */
+    .about {
+      background: #fff4d2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about h2 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 52px;
+      color: var(--maroon);
+      line-height: 1;
+      margin: 10px 0 25px;
+    }
+
+    .about p {
+      line-height: 1.9;
+      color: #654b40;
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .promise-box {
+      background: var(--maroon);
+      color: white;
+      padding: 45px;
+      border: 2px solid var(--gold);
+      text-align: center;
+      box-shadow: 12px 12px 0 #d3ad58;
+    }
+
+    .promise-box .number {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 90px;
+      color: var(--gold);
+      line-height: .8;
+    }
+
+    .promise-box h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 34px;
+      margin: 20px 0;
+      color: white;
+    }
+
+    .promise-box p {
+      color: #f4dfab;
+    }
+
+    /* CONTACT */
+    .contact {
+      background: var(--dark-maroon);
+      color: white;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    .contact h2 {
+      font-family: "Cormorant Garamond", serif;
+      color: var(--gold);
+      font-size: 50px;
+      margin-bottom: 25px;
+    }
+
+    .contact-info {
+      margin: 20px 0;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .contact-info strong {
+      color: var(--gold);
+      display: block;
+      font-size: 13px;
+      letter-spacing: 1px;
+    }
+
+    .contact-card {
+      border: 1px solid var(--gold);
+      padding: 45px;
+      background: rgba(255,255,255,.04);
+    }
+
+    .contact-card h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 34px;
+      color: var(--gold);
+    }
+
+    .contact-card p {
+      margin-top: 20px;
+      color: #f5e5bb;
+      line-height: 1.8;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #160101;
+      color: #d8ba73;
+      text-align: center;
+      padding: 25px;
+      font-size: 12px;
+    }
+
+    footer strong {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 22px;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    /* MOBILE */
+    @media(max-width: 900px) {
+      nav {
+        display: none;
+      }
+
+      .trust {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .collections {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .about,
+      .contact {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width: 550px) {
+      .hero {
+        min-height: 570px;
+      }
+
+      .hero-content {
+        padding: 50px 25px;
+      }
+
+      h1 {
+        font-size: 65px;
+      }
+
+      .hero h2 {
+        font-size: 23px;
+      }
+
+      .trust {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-item {
+        border-right: 0;
+        border-bottom: 1px solid #c9a447;
+        padding-bottom: 20px;
+      }
+
+      .collections {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .collection-img {
+        height: 120px;
+        font-size: 50px;
+      }
+
+      section {
+        padding: 55px 5%;
+      }
+
+      .section-title h2,
+      .about h2,
+      .contact h2 {
+        font-size: 40px;
+      }
+
+      .promo h2 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    Raj Shree
+    <span>JEWELLERS</span>
+  </div>
+
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT US</a>
+    <a href="#collection">COLLECTION</a>
+    <a href="#promise">OUR PROMISE</a>
+    <a href="#contact">CONTACT US</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="small-title">शुभ लाभ • विश्वास • परंपरा</div>
+
+    <h1>Raj Shree Jewellers</h1>
+
+    <h2>
+      Shagun bhi, Style bhi,<br>
+      Sirf Raj Shree Jewellers pe bharosa bhi.
+    </h2>
+
+    <a href="#collection" class="gold-btn">Explore Our Collection</a>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="trust">
+
+  <div class="trust-item">
+    <div class="trust-icon">♕</div>
+    <h3>60 Years of Trust</h3>
+    <p>छः दशकों से ईमानदारी, गुणवत्ता और विश्वास की पहचान।</p>
+  </div>
+
+  <div class="trust-item">
+    <div class="trust-icon">◆</div>
+    <h3>100% Hallmark 916 Gold</h3>
+    <p>शुद्धता का भरोसा, हर आभूषण में गुणवत्ता का वादा।</p>
+  </div>
+
+  <div class="trust-item">
+    <div class="trust-icon">✓</div>
+    <h3>Generations of Trust</h3>
+    <p>एक पीढ़ी से दूसरी पीढ़ी तक चलता आया विश्वास।</p>
+  </div>
+
+  <div class="trust-item">
+    <div class="trust-icon">♢</div>
+    <h3>Beauty That Lasts</h3>
+    <p>हर अवसर और हर रिश्ते के लिए खूबसूरत आभूषण।</p>
+  </div>
+
+</div>
+
+<!-- PROMO -->
+<section class="promo">
+  <h2>Har Rishta, Har Mauka...</h2>
+  <p>
+    Aur Har Sapna Hota Hai Aur Bhi Khaas<br>
+    <strong>Raj Shree Jewellers Ke Saath</strong>
+  </p>
+</section>
+
+<!-- COLLECTION -->
+<section id="collection">
+
+  <div class="section-title">
+    <div class="eyebrow">Our Collection</div>
+    <h2>Har Khushi Ke Liye Kuch Khaas</h2>
+    <p>
+      शादी हो, त्योहार हो या कोई खास मौका —
+      Raj Shree Jewellers में आपके हर जश्न के लिए सुंदर आभूषण।
+    </p>
+  </div>
+
+  <div class="collections">
+
+    <div class="collection">
+      <div class="collection-img">📿</div>
+      <h3>Necklaces</h3>
+    </div>
+
+    <div class="collection">
+      <div class="collection-img">💎</div>
+      <h3>Earrings</h3>
+    </div>
+
+    <div class="collection">
+      <div class="collection-img">⭕</div>
+      <h3>Bangles</h3>
+    </div>
+
+    <div class="collection">
+      <div class="collection-img">💍</div>
+      <h3>Rings</h3>
+    </div>
+
+    <div class="collection">
+      <div class="collection-img">✨</div>
+      <h3>Mangalsutra</h3>
+    </div>
+
+    <div class="collection">
+      <div class="collection-img">💫</div>
+      <h3>Pendants</h3>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+
+  <div>
+    <div class="small-title">Our Story</div>
+
+    <h2>
+      60 Saal Ka Rishta,<br>
+      Aapke Parivaar Ke Saath
+    </h2>
+
+    <p>
+      Raj Shree Jewellers सिर्फ आभूषणों की दुकान नहीं,
+      बल्कि वर्षों से परिवारों के भरोसे का नाम है।
+    </p>
+
+    <p>
+      हमारी कोशिश है कि हर ग्राहक को मिले शुद्ध सोना,
+      सुंदर डिजाइन और सबसे बढ़कर — सही सलाह और पूरा विश्वास।
+    </p>
+
+    <p>
+      शादी के शुभ अवसर से लेकर रोज़मर्रा की खूबसूरती तक,
+      हम हर रिश्ते और हर खुशी का हिस्सा बनने पर गर्व महसूस करते हैं।
+    </p>
+  </div>
+
+  <div class="promise-box" id="promise">
+    <div class="number">60</div>
+    <h3>Years of Trust</h3>
+    <p>
+      शुद्ध सोना • सही दाम • भरोसे का रिश्ता
+    </p>
+    <br>
+    <p>
+      <strong>Raj Shree Jewellers</strong><br>
+      जहाँ आभूषण के साथ मिलता है विश्वास।
+    </p>
+  </div>
+
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+  <div>
+    <div class="small-title">Visit Our Store</div>
+    <h2>Aaiye,<br>Milte Hain</h2>
+
+    <div class="contact-info">
+      <strong>📍 ADDRESS</strong>
+      Bada Chouk, Main Road,<br>
+      Rajdhanwar
+    </div>
+
+    <div class="contact-info">
+      <strong>👤 PROPRIETOR</strong>
+      Umesh Prasad Sahu
+    </div>
+  </div>
+
+  <div class="contact-card">
+    <h3>Shuddh Sona.<br>Behtareen Design.<br>Sahi Daam.</h3>
+
+    <p>
+      Yahi hai Raj Shree Jewellers ka vaada —
+      aapke vishwas ko har baar khara utarne ka.
+    </p>
+
+    <br>
+
+    <a href="#collection" class="gold-btn">
+      View Our Collection
+    </a>
+  </div>
+
+</section>
+
+<footer>
+  <strong>Raj Shree Jewellers</strong>
+  60 Years of Trust • 100% Hallmark 916 Gold Jewellery
+  <br><br>
+  © 2026 Raj Shree Jewellers, Rajdhanwar. All Rights Reserved.
+</footer>
+
+</body>
+</html>
+```
